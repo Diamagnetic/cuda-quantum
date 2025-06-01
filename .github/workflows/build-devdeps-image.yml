@@ -42,4 +42,4 @@ jobs:
     - name: Push Docker image
       run: |
         REPO_NAME=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
-        docker push ghcr.io/${{ github.repository }}/cudaq-dev
+        docker push ghcr.io/$REPO_NAME/cudaq-dev

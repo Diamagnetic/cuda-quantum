@@ -37,7 +37,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t cudaq-dev -f ./docker/build/devdeps.Dockerfile .
+        REPO_NAME=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+        docker build -t ghcr.io/$REPO_NAME/cudaq-dev -f ./docker/build/devdeps.Dockerfile .
 
     - name: Push Docker image
       run: |

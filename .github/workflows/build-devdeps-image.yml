@@ -32,8 +32,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t ${{ secrets.REGISTRY_IMAGE }}/cudaq-dev -f ./docker/build/devdeps.Dockerfile .
+        docker build -t cudaq-dev -f ./docker/build/devdeps.Dockerfile .
 
     - name: Push Docker image
       run: |
-        docker push ${{ secrets.REGISTRY_IMAGE }}/cudaq-dev
+        docker push ghcr.io/${{ github.repository }}/cudaq-dev
